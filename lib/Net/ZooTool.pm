@@ -1,6 +1,8 @@
 package Net::ZooTool;
 
 use Moose;
+with 'Net::ZooTool::Utils';
+
 use Carp;
 
 use Net::ZooTool::Auth;
@@ -73,6 +75,22 @@ sub user {
 sub item {
     my $self = shift;
     return Net::ZooTool::Item->new({ auth => $self->auth });
+}
+
+=head2
+    This is the global method to add a new item to a user's Zoo.
+    You can feed it with some additional parameters to set the information
+    about the item, like tags, description and stuff. If the item
+    already exists in the user's Zoo, it won't be added again . The option
+    to overwrite existing items with new values will follow later.
+=cut
+sub add {
+    my ( $self, $args ) = @_;
+
+    $args->{apikey} = $self->auth->apikey;
+
+    my $data = _fetch('/add/' . _hash_to_query_string($args), $self->auth);
+    return $data;
 }
 
 no Moose;
