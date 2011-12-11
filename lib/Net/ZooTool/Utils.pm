@@ -10,7 +10,7 @@ use WWW::Curl::Easy;
 
 use namespace::autoclean;
 
-our $VERSION = '0.001';
+our $VERSION = '0.003';
 
 =head2
     Fetches data

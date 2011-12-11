@@ -3,7 +3,7 @@ package Net::ZooTool::Auth;
 use Moose;
 use namespace::autoclean;
 
-our $VERSION = '0.001';
+our $VERSION = '0.003';
 
 has apikey    => ( isa => 'Str', is => 'ro', required => 1, );
 has apisecret => ( isa => 'Str', is => 'ro', );

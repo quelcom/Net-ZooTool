@@ -11,7 +11,7 @@ use Net::ZooTool::Item;
 
 use namespace::autoclean;
 
-our $VERSION = '0.001';
+our $VERSION = '0.003';
 
 has auth => (
     isa => 'Net::ZooTool::Auth',
@@ -136,7 +136,9 @@ Net::ZooTool is a wrapper to the Zootool bookmarking service. It attempts to fol
 
 =item new(\%ARGS)
 
-    Create a new Net::ZooTool object
+Create a new Net::ZooTool object.
+
+Parameters:
 
 =over 3
 
@@ -168,15 +170,17 @@ I<string>. Your Zootool password (optional)
 
 =item $zoo->user()
 
-    Net::ZooTool::User object
+Net::ZooTool::User object
 
 =item $zoo->item()
 
-    Net::ZooTool::Item object
+Net::ZooTool::Item object
 
 =item $zoo->add(\%ARGS)
 
-    Adds a new item to your zoo (authentication is required)
+Adds a new item to your zoo (authentication is required).
+
+Parameters:
 
 =over 8
 
@@ -232,7 +236,9 @@ I<boolean>. Add method requires authenticated call (required)
 
 =item $zoo->user->items(\%ARGS)
 
-    Get the latest items from all users or specify a username to get all items from a specific user. Authenticate to get all private items of a user as well. Use authentication if you want to get private items as well).
+Get the latest items from all users or specify a username to get all items from a specific user. Authenticate to get all private items of a user as well. Use authentication if you want to get private items as well).
+
+Parameters:
 
 =over 6
 
@@ -282,7 +288,9 @@ I<boolean>. Set to true to get private items as well.
 
 =item $zoo->user->info(\%ARGS)
 
-    Get info about a certain user. Authentication is optional (if you want to get the email address from the user, you need to sign in).
+Get info about a certain user. Authentication is optional (if you want to get the email address from the user, you need to sign in).
+
+Parameters:
 
 =over 3
 
@@ -308,7 +316,9 @@ I<boolean>. Set to true to get email address
 
 =item $zoo->user->validate(\%ARGS)
 
-    Validate the user credentials. Useful for logins.
+Validate the user credentials. Useful for logins.
+
+Parameters:
 
 =over 2
 

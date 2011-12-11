@@ -34,7 +34,7 @@ DEPENDENCIES
 - WWW::Curl::Easy;
 
 VERSION
-    version 0.001
+    version 0.003
 
 AUTHOR
     Josep Roca <quelcomgmail.com>

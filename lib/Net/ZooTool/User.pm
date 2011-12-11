@@ -7,7 +7,7 @@ use Carp;
 
 use namespace::autoclean;
 
-our $VERSION = '0.001';
+our $VERSION = '0.003';
 
 has auth => (
     isa => 'Net::ZooTool::Auth',
